@@ -9,13 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.13",
+    "add": "^2.0.6",
+    "babel-plugin-transform-jsx-classname-components": "^0.0.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-pug": "^7.0.1",
     "lodash": "^4.17.21",
     "next": "12.3.0",
     "pug": "^3.0.2",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/node": "18.7.18",
