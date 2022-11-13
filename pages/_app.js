@@ -1,8 +1,9 @@
 import React from 'react';
 import '../styles/globals.css';
+import { wrapper } from '../store/store';
 
-function MyApp({ Component, pageProps, children }) {
-  return <Component {...pageProps} {...children} />
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp);
