@@ -19,6 +19,7 @@
     "babel-plugin-transform-jsx-classname-components": "^0.0.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-pug": "^7.0.1",
+    "framer-motion": "^7.6.6",
     "lodash": "^4.17.21",
     "next": "12.3.0",
     "next-redux-wrapper": "^8.0.0",
