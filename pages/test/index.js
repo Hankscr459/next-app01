@@ -4,13 +4,14 @@ import styles from 'styles/Home.module.css';
 import Layout from 'components/layout';
 import { selectAuthState, setAuthState } from 'store/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { Divider } from '@mui/material';
 
 export default function Test() {
   const authState = useSelector(selectAuthState);
   const dispatch = useDispatch();
   // const userDetails = useSelector(state => state)
   // console.log('userDetails: ', userDetails)
-
+  const titlew = 'test'
   return pug`
     Layout
       div(className=${styles.container})
@@ -25,5 +26,10 @@ export default function Test() {
         else
           h3 authStat true
         h3 value: ${authState}
+        if titlew
+          Divider(
+            sx=${{opacity: 1}}
+          )
+            h3 jfgeirojv
   `
 }
