@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
-import Layout from 'components/layout';
+import Layout2 from 'components/layout2';
 import { selectAuthState, setAuthState } from 'store/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -12,7 +12,7 @@ export default function Test() {
   // console.log('userDetails: ', userDetails)
 
   return pug`
-    Layout
+    Layout2
       div(className=${styles.container})
         Head
           title Test Page

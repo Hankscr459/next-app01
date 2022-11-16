@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import MuiAppBar from '@mui/material/AppBar';
 import { Box, CssBaseline, IconButton, Container, Grid } from '@mui/material';
@@ -59,7 +59,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Layout = ({ children }) => {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
