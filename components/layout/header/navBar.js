@@ -20,11 +20,14 @@ const NavBar = () => {
   };
 
   const handleMenu = (event) => {
+    console.log('anchorElh: ', anchorEl);
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
+    console.log('anchorEl: ', anchorEl);
     setAnchorEl(null);
+    console.log('anchorEl2: ', anchorEl);
   };
 
   return pug`
