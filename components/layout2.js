@@ -7,9 +7,12 @@ const Layout2 = ({ children }) => {
   return pug`
     div
       NavBar
-      Container(maxWidth="lg", sx=${{ mt: 5, mb: 4 }})
-        Grid(container, spacing=${3})
-        Grid(item xs=${12} md=${8} lg=${9})
+      Container(
+        maxWidth="lg", 
+        sx=${{ mt: 5, mb: 4 }},
+        className="min-h-[100vh]",
+      )
+        Grid(item, xs=${12}, md=${8}, lg=${9})
           main
             ${children}
       Footer
