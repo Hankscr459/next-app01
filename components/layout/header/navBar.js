@@ -12,7 +12,7 @@ import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
-const ToolBar = () => {
+const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleChange = (event) => {
@@ -71,4 +71,4 @@ const ToolBar = () => {
   `;
 }
 
-export default ToolBar;
+export default NavBar;
