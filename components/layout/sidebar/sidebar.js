@@ -27,7 +27,7 @@ const SiderBar = () => {
       tl.to('.sideBar', { display: 'inline', width: '15rem' });
       tl.to('.sideBar', { x: 0 });
     } else {
-      tl.to('.sideBar', { x: '-100%', display: 'none' });
+      tl.to('.sideBar', { x: '-100%' });
     }
   }, [sidebarState]);
 

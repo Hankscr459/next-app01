@@ -44,7 +44,7 @@ const NavBar = () => {
             onClick=${() => dispatch(setIsOpen(!sidebarState))},
           )
             MenuIcon
-          Typography(variant="h6", component="div", sx=${{ flexGrow: 1 }}) Photos ${sidebarState}
+          Typography(variant="h6", component="div", sx=${{ flexGrow: 1 }}) Photos
           div
             IconButton(
               size="large",
