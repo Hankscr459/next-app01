@@ -8,11 +8,15 @@ const Layout2 = ({ children }) => {
   return pug`
     div
       NavBar
-      .container.flex(
-        className="min-h-[100vh] min-w-[100%]",
+      div(
+        className=${`
+          container flex
+          min-h-[100vh] min-w-[100%]
+          bg-neutral-300 grow
+        `},
       )
         SiderBar
-        main.bg-neutral-300.grow
+        main
           ${children}
       Footer
   `;

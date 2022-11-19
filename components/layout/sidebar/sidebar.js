@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -11,36 +11,31 @@ import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import StarBorder from '@mui/icons-material/StarBorder';
-
-const openedMixin = (theme) => ({
-  width: drawerWidth,
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.enteringScreen,
-  }),
-  overflowX: 'hidden',
-});
-
-const closedMixin = (theme) => ({
-  transition: theme.transitions.create('width', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
-  [theme.breakpoints.up('sm')]: {
-    width: `calc(${theme.spacing(8)} + 1px)`,
-  },
-});
+import { selectSideBarState } from 'store/sideBar';
+import { useSelector } from 'react-redux';
+import gsap from 'gsap';
 
 const SiderBar = () => {
   const [open, setOpen] = useState(true);
+  const sidebarState = useSelector(selectSideBarState);
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: { duration: 0.4, ease: "Power.easeOut" },
+    });
+    if (sidebarState) {
+      tl.to('.sideBar', { display: 'inline', width: '15rem' });
+      tl.to('.sideBar', { x: 0 });
+    } else {
+      tl.to('.sideBar', { x: '-100%', display: 'none' });
+    }
+  }, [sidebarState]);
 
   const handleClick = () => {
     setOpen(!open);
   };
   return pug`
-    div(className="min-w-[15rem]")
+    .sideBar(className="min-w-[15rem] bg-white")
       List(
       sx=${{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }},
       component="nav",

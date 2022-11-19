@@ -11,8 +11,12 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import { selectSideBarState, setIsOpen } from 'store/sideBar';
+import { useDispatch, useSelector } from 'react-redux';
 
 const NavBar = () => {
+  const sidebarState = useSelector(selectSideBarState);
+  const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleChange = (event) => {
@@ -20,14 +24,11 @@ const NavBar = () => {
   };
 
   const handleMenu = (event) => {
-    console.log('anchorElh: ', anchorEl);
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
-    console.log('anchorEl: ', anchorEl);
     setAnchorEl(null);
-    console.log('anchorEl2: ', anchorEl);
   };
 
   return pug`
@@ -40,9 +41,10 @@ const NavBar = () => {
             color="inherit",
             aria-label="menu",
             sx=${{ mr: 2 }},
+            onClick=${() => dispatch(setIsOpen(!sidebarState))},
           )
             MenuIcon
-          Typography(variant="h6", component="div", sx=${{ flexGrow: 1 }}) Photos
+          Typography(variant="h6", component="div", sx=${{ flexGrow: 1 }}) Photos ${sidebarState}
           div
             IconButton(
               size="large",
