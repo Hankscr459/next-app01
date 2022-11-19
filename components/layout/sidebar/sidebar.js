@@ -25,9 +25,8 @@ const SiderBar = () => {
     });
     if (sidebarState) {
       tl.to('.sideBar', { display: 'inline', width: '15rem' });
-      tl.to('.sideBar', { x: 0 });
     } else {
-      tl.to('.sideBar', { x: '-100%' });
+      tl.to('.sideBar', { width: 0 });
     }
   }, [sidebarState]);
 
@@ -35,9 +34,9 @@ const SiderBar = () => {
     setOpen(!open);
   };
   return pug`
-    .sideBar(className="min-w-[15rem] bg-white")
+    .sideBar(className=" bg-white overflow-hidden")
       List(
-      sx=${{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }},
+      sx=${{ width: '15rem', maxWidth: 360, bgcolor: 'background.paper' }},
       component="nav",
       aria-labelledby="nested-list-subheader",
       subheader=${
