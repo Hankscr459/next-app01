@@ -17,8 +17,8 @@ const Layout2 = ({ children }) => {
           bg-neutral-300
         `},
       )
-        SiderBar
-        main(className="view grow")
+        SiderBar()
+        main(className="grow")
           ${children}
       Footer
   `;
