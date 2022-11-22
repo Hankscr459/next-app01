@@ -14,6 +14,7 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
     "@reduxjs/toolkit": "^1.9.0",
+    "@tabler/icons": "^1.111.0",
     "add": "^2.0.6",
     "babel-plugin-transform-jsx-classname-components": "^0.0.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -25,6 +26,7 @@
     "pug": "^3.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-redux": "^8.0.5",
     "react-use": "^17.4.0",
     "yarn": "^1.22.19"

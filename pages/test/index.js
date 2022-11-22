@@ -17,7 +17,7 @@ export default function Test() {
   const dispatch = useDispatch();
   // const userDetails = useSelector(state => state)
   // console.log('userDetails: ', userDetails)
-
+  
   return pug`
     Layout2
       div(className="mx-5 my-5")
