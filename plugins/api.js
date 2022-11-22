@@ -1,4 +1,4 @@
-// import { useCookie } from 'react-use';
+import { useCookie } from 'react-use';
 
 const apiUrl = process.env.ApiUrl || '';
 
@@ -8,13 +8,13 @@ export const Api = {
   
   user: {
     signin: async() => {
-      return fetch(`${apiUrl}/v1/user/signin`, {
+      return await (await fetch(`${apiUrl}/v1/user/signin`, {
         method: 'POST',
         body: JSON.stringify({
           email: 'Alan@gmail.com',
           password: '123456789',
         }),
-      });
+      })).json();
     },
   },
 };

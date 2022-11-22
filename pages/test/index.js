@@ -11,7 +11,6 @@ import {
   Typography,
   Button,
 } from '@mui/material';
-// import { Api } from '@/plugins/api';
 
 export default function Test() {
   const authState = useSelector(selectAuthState);

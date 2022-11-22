@@ -5,8 +5,10 @@ import { to } from 'await-to-js';
 
 export default function Signin() {
   const signin = async() => {
-    console.log('Signin');
     const [err, res] = await to(Api.user.signin());
+    if (err) {
+      console.log('err: ', err);
+    }
     console.log('res: ', res);
   }
   return pug`
