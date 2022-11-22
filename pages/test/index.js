@@ -23,10 +23,10 @@ export default function Test() {
       div(className="mx-5 my-5")
         Card(className="max-w-[100%]")
           CardContent
-            Typography(wrap sx=${{ fontSize: 14 }} color="text.secondary" gutterBottom) Word of the Day
-            Typography(wrap variant="h5" component="div") be{bull}nev {bull} o {bull}lent
-            Typography(wrap sx=${{ mb: 1.5 }} color="text.secondary") adjective
-            Typography(wrap variant="body2") well meaning and kindly. w
+            Typography(sx=${{ fontSize: 14 }} color="text.secondary" gutterBottom) Word of the Day
+            Typography(variant="h5" component="div") be{bull}nev {bull} o {bull}lent
+            Typography(sx=${{ mb: 1.5 }} color="text.secondary") adjective
+            Typography(variant="body2") well meaning and kindly. w
               br
           CardActions
             Button(size="small") Learn More
