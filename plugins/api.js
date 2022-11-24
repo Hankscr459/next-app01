@@ -11,7 +11,7 @@ export const Api = {
   
   user: {
     signin: async() => {
-      return await (await fetch(`${apiUrl}/v1/user/signin`, {
+      return await (await fetch(`${apiUrl}/v1/user/signin2`, {
         method: 'POST',
         ...stringify({
           email: 'Alan@gmail.com',
