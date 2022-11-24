@@ -1,4 +1,3 @@
-import React from 'react';
 import { useHookstate } from '@hookstate/core';
 import { bind } from 'helpers/util';
 

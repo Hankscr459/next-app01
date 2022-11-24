@@ -19,6 +19,7 @@
     "@tabler/icons": "^1.111.0",
     "add": "^2.0.6",
     "await-to-js": "^3.0.0",
+    "babel-plugin-auto-import": "^1.1.0",
     "babel-plugin-transform-jsx-classname-components": "^0.0.3",
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-plugin-transform-react-pug": "^7.0.1",

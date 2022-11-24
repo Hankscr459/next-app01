@@ -2,6 +2,18 @@
     "presets": ["next/babel"],
     "plugins": [
       "transform-react-pug",
-      "transform-react-jsx"
+      "transform-react-jsx",
+      [
+        "auto-import", 
+        {
+          "declarations": [
+            { 
+              "default": "React", 
+              "members": ["useState"],
+              "path": "react",
+            }
+          ]
+        }
+      ]
     ]
   }
