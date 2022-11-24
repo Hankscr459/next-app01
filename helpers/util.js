@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-
-export const bind = (obj) => {
+export function bind (obj) {
     return { value: obj.get(), onChange: (e) => obj.set(e.target.value) };
 }
 

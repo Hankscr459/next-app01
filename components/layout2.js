@@ -5,7 +5,7 @@ import { Container, Grid } from '@mui/material';
 import SiderBar from 'components/layout/sidebar/sidebar';
 
 
-const Layout2 = ({ children }) => {
+export const Layout2 = ({ children }) => {
 
   return pug`
     div

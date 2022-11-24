@@ -10,7 +10,52 @@
             { 
               "default": "React", 
               "members": ["useState"],
-              "path": "react",
+              "path": "react"
+            },
+            
+            {
+              "members": ["useHookstate"],
+              "path": "@hookstate/core"
+            },
+            { 
+              "default": "util",
+              "members": ["bind"],
+              "path": "@/helpers/util.js"
+            },
+            { 
+              "default": "layout2",
+              "members": ["Layout2"],
+              "path": "@/components/layout2.js"
+            },
+            { 
+              "default": "layout",
+              "members": ["Layout"],
+              "path": "@/components/layout.js"
+            },
+            { 
+              "default": "api",
+              "members": ["Api"],
+              "path": "@/plugins/api.js"
+            },
+            { 
+              "members": ["useDispatch","useSelector"],
+              "path": "react-redux"
+            },
+            { 
+              "members": [
+                "Badge",
+                "Button",
+                "Card",
+                "CardContent",
+                "CardActions",
+                "List",
+                "ListItem",
+                "ListItemIcon",
+                "ListItemText",
+                "ListItemButton",
+                "Typography"
+              ],
+              "path": "@mui/material"
             }
           ]
         }

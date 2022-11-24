@@ -1,16 +1,7 @@
-import React from 'react';
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
 import Layout2 from 'components/layout2';
 import { selectAuthState, setAuthState } from 'store/authSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  Card,
-  CardContent,
-  CardActions,
-  Typography,
-  Button,
-} from '@mui/material';
 
 export default function Test() {
   const authState = useSelector(selectAuthState);

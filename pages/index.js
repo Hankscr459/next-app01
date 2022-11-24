@@ -1,14 +1,6 @@
-import React from "react";
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
-import Layout from 'components/layout';
-import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText  from '@mui/material/ListItemText';
-import ListItemButton from '@mui/material/ListItemButton';
 import InboxIcon from '@mui/icons-material/Inbox';
 
 export default function Home() {

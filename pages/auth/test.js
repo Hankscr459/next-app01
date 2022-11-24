@@ -1,6 +1,3 @@
-import { useHookstate } from '@hookstate/core';
-import { bind } from 'helpers/util';
-
 export default function Test () {
   const objState = useHookstate({
     member: {
