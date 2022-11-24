@@ -3,24 +3,24 @@ import { Button } from '@mui/material';
 import { Api } from '@/plugins/api';
 import { Card } from '@mui/material';
 import { useSetState } from 'react-use';
-import { useHookstate, State } from '@hookstate/core';
+import { useMyForm } from '../../helpers/util';
 
 export default function Signin() {
-  const objState = useHookstate({
-    member: {
-      no: 'asdf',
-      type: 'vip',
+  const { values, bind, setValues } = useMyForm({
+    name: '',
+    type: '',
+    price: {
+      dollar: 5, 
+      cents: 20, 
+      config: {
+        name: '123', 
+        key: 'my',
+      },
     },
-    desc: 'desc',
-  })
-  console.log('objState: ', objState);
-  const [obj, setObj] = useSetState({
-    key: 'vrstion',
-    value: 'fref',
+    list: [{key: 1, value: 'hello'}],
   });
   const [state, setState] = useSetState({
     name: '123',
-    obj,
   });
   const [token, setToken] = useState({});
   const [errMessage, setErrMessage] = useState({});
@@ -42,17 +42,6 @@ export default function Signin() {
     };
   }
 
-  const vModel2 = (prop) => {
-    const propsArr = prop.split('.');
-    let value = objState[prop].get();
-    let onChange =  e => objState[prop].set(e.target.value);
-    if (propsArr.length === 2) {
-      value = objState[propsArr[0]][propsArr[1]].get();
-      onChange =  e => objState[propsArr[0]][propsArr[1]].set(e.target.value);
-    }
-    return { value, onChange };
-  }
-
   return pug`
     div(className="flex justify-center")
       .flex-col
@@ -60,14 +49,8 @@ export default function Signin() {
         h3 Err: ${JSON.stringify(errMessage)}
         h3 success: ${JSON.stringify(token)}
         input(type="text",  ...vModel('name'))
-        input(type="text",  value=${obj.key}, onChange=${(e) => {
-          setObj({ key: e.target.value })
-        }})
-        input(type="text",  ...vModel2('member.no'))
-        input(type="text",  ...vModel2('desc'))
-        h3  ${JSON.stringify(state)}
-        h3  ${JSON.stringify(obj)}
-        h3  ${JSON.stringify(objState.get())}
+        br
+        input(type="text", name="price.config.name",  ...bind)
     // div(className="flex justify-center")
     //   .flex-col
     //     Button(size="small", onClick=${signin}) Learn More
