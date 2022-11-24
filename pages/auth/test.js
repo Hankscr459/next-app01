@@ -1,7 +1,6 @@
 import React from 'react';
 import { useHookstate } from '@hookstate/core';
-import { bind } from '../../helpers/util';
-await import ('../../helpers/autoImport');
+import { bind } from 'helpers/util';
 
 export default function Test () {
   const objState = useHookstate({
