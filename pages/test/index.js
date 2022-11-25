@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import styles from 'styles/Home.module.css';
-import Layout2 from 'components/layout2';
 import { selectAuthState, setAuthState } from 'store/authSlice';
 
 export default function Test() {

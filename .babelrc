@@ -12,7 +12,6 @@
               "members": ["useState"],
               "path": "react"
             },
-            
             {
               "members": ["useHookstate"],
               "path": "@hookstate/core"

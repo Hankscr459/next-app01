@@ -5,6 +5,9 @@ const nextConfig = {
   env: {
     ApiUrl: process.env.ApiUrl,
   },
+  // experimental: {
+  //   forceSwcTransforms: true,
+  // },
 };
 
 module.exports = nextConfig;
