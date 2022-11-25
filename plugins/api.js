@@ -29,11 +29,11 @@ export const Api = {
   
   user: {
     signin: async() => {
-      return await fetchApi(`${apiUrl}/v1/user/signin2`, {
+      return await fetchApi(`${apiUrl}/v1/user/signin`, {
         method: 'POST',
         ...stringify({
           email: 'Alan@gmail.com',
-          password: '123456789k',
+          password: '123456789',
         }),
       });
     },

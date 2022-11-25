@@ -23,7 +23,7 @@
             },
             { 
               "default": "util",
-              "members": ["bind"],
+              "members": ["bind", "getNest"],
               "path": "@/helpers/util.js"
             },
             { 

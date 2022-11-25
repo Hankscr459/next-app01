@@ -1,6 +1,23 @@
+import { get } from 'lodash';
+
 export function bind (obj) {
-    return { value: obj.get(), onChange: (e) => obj.set(e.target.value) };
+  return { value: obj.get(), onChange: (e) => obj.set(e.target.value) };
 }
+
+export function getNest (obj, path, de) {
+  if (!path) {
+    return obj.get();
+  }
+  const v = get(obj, `${path}`)
+  if (!v || !v.get()) {
+    if (de) {
+      return de;
+    } else {
+      return null;
+    }
+  }
+  return v.get();
+};
 
 export const useMyForm = initialObject => {
   const [values, setValues] = useState(initialObject);
