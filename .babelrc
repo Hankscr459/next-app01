@@ -12,6 +12,11 @@
               "members": ["useState"],
               "path": "react"
             },
+            { 
+              "default": "to", 
+              "members": ["to"],
+              "path": "await-to-js"
+            },
             {
               "members": ["useHookstate"],
               "path": "@hookstate/core"
