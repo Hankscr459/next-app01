@@ -6,12 +6,20 @@ const stringify = (obj) => {
 }
 
 const fetchApi = async(url, opts) => {
-  const [err, res] = await to(fetch(url, opts));
-  if (res) {
-    return await res.json();
-  }
+  const [err, success] = await to(fetch(url, opts));
   if (err) {
-    return err;
+    return { err };
+  }
+  if (success) {
+    const [fail, res] = await to(success.json());
+    if (res) {
+      if (!res.success) {
+        return { err: res };
+      }
+      return { res };
+    } else {
+      return { err: fail };
+    }
   }
 };
 
@@ -21,11 +29,11 @@ export const Api = {
   
   user: {
     signin: async() => {
-      return await fetchApi(`${apiUrl}/v1/user/signin`, {
+      return await fetchApi(`${apiUrl}/v1/user/signin2`, {
         method: 'POST',
         ...stringify({
           email: 'Alan@gmail.com',
-          password: '123456789',
+          password: '123456789k',
         }),
       });
     },

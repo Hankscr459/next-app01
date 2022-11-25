@@ -3,12 +3,12 @@ export default function Signin() {
   const [errMessage, setErrMessage] = useState({});
 
   const signin = async() => {
-    const res = await Api.user.signin();
-    if (res.success) {
+    const { err, res } = await Api.user.signin();
+    if (res) {
       setToken(res);
     }
-    if (!res.success) {
-      setErrMessage(res.message);
+    if (err) {
+      setErrMessage(err.message);
     }
   }
 
