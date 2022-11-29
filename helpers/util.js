@@ -1,4 +1,5 @@
-import { get } from 'lodash';
+import { get, flatten } from 'lodash';
+import Swal from 'sweetalert2';
 
 export function bind (obj) {
   return { value: obj.get(), onChange: (e) => obj.set(e.target.value) };
@@ -47,4 +48,16 @@ export const useMyForm = initialObject => {
       onChange: handleOnChange
     }
   };
+};
+
+export const validForm = (errors) => {
+  if (get(errors, 'length')) {
+    const list = errors.map(e => {
+      return e.invalid.map(ei => {
+        return `\n${e.state.errorMessages[ei]}`;
+      });
+    });
+    const title = flatten(list).toString().substring(1);
+    Swal.fire({ title, icon: 'error' });
+  }
 };

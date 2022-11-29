@@ -52,11 +52,17 @@
                 "Card",
                 "CardContent",
                 "CardActions",
+                "FormLabel",
+                "FormControl",
+                "Grid",
+                "Paper",
                 "List",
                 "ListItem",
                 "ListItemIcon",
                 "ListItemText",
                 "ListItemButton",
+                "RadioGroup",
+                "Radio",
                 "Typography"
               ],
               "path": "@mui/material"
