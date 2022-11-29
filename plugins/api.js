@@ -28,13 +28,10 @@ export const Api = {
   // console.log('value: ', value)
   
   user: {
-    signin: async() => {
+    signin: async(body) => {
       return await fetchApi(`${apiUrl}/v1/user/signin`, {
         method: 'POST',
-        ...stringify({
-          email: 'Alan@gmail.com',
-          password: '123456789',
-        }),
+        ...stringify(body),
       });
     },
   },

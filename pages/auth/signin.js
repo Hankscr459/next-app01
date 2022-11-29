@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
 import { validForm } from '../../helpers/util';
+import { useCookie } from 'react-use';
+import Swal from 'sweetalert2';
+import { get } from 'lodash';
 
 export default function Signin() {
   const form = useRef();
@@ -8,20 +11,15 @@ export default function Signin() {
     email: '',
     password: '',
   });
-  const [token, setToken] = useState({});
-  const [errMessage, setErrMessage] = useState({});
+  const [value, updateCookie, deleteCookie] = useCookie('token');
 
   const signin = async() => {
-    const { err, res } = await Api.user.signin();
-    if (res) {
-      setToken(res);
-    }
+    const { err, res } = await Api.user.signin(body.get());
     if (err) {
-      setErrMessage(err.message);
+      Swal.fire({ title: err.message, icon: 'error' });
+      return ;
     }
-  }
-
-  const handleSubmit = () => {
+    updateCookie(get(res, 'data.token'));
   }
 
   return pug`
@@ -37,14 +35,14 @@ export default function Signin() {
               'md:max-w-[30rem] ' +
               'sm:max-w-[20rem] ',
             ref=${form},
-            onSubmit=${handleSubmit},
+            onSubmit=${signin},
             onError=${errors => validForm(errors)},
           )
             Grid(container, spacing=${2})
               Grid(item, xs=${12})
                 TextValidator(
                   className="w-[100%]",
-                  ...bind(body.password)
+                  ...bind(body.email),
                   label="Email",
                   name="email",
                   validators=${['required', 'isEmail']}
@@ -52,7 +50,7 @@ export default function Signin() {
                 )
                 TextValidator(
                   className="my-4 w-[100%]",
-                  ...bind(body.email),
+                  ...bind(body.password),
                   label="Password", name="password",
                   validators=${['required']}, type="password",
                   errorMessages=${['密碼欄位必填']}
