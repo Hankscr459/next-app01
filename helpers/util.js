@@ -51,7 +51,7 @@ export const useMyForm = initialObject => {
 };
 
 export const validForm = (errors) => {
-  if (get(errors, 'length')) {
+  if (errors?.length) {
     const list = errors.map(e => {
       return e.invalid.map(ei => {
         return `\n${e.state.errorMessages[ei]}`;
@@ -59,5 +59,19 @@ export const validForm = (errors) => {
     });
     const title = flatten(list).toString().substring(1);
     Swal.fire({ title, icon: 'error' });
+    throw title;
   }
 };
+
+export const errModal = (err) => {
+  if (err?.message) {
+    Swal.fire({ title: err.message, icon: 'error' });
+  }
+}
+
+export const errAbortModal = (err) => {
+  if (err?.message) {
+    Swal.fire({ title: err.message, icon: 'error' });
+    throw get(err, 'message', 'No Erorr, but got Abort. Please check your code');
+  }
+}
