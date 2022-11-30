@@ -1,8 +1,18 @@
 import { get, flatten } from 'lodash';
 import Swal from 'sweetalert2';
 
+export function bindPrevent (obj) {
+  return {
+    value: obj.get(), 
+    onChange: (e) => obj.set(e.target.value), 
+    onKeyPress: (e) => {
+      if (e.key === 'Enter') e.preventDefault();
+    }
+  };
+}
+
 export function bind (obj) {
-  return { value: obj.get(), onChange: (e) => obj.set(e.target.value) };
+  return { value: obj.get(), onChange: (e) => obj.set(e.target.value)};
 }
 
 export function getNest (obj, path, de) {

@@ -12,7 +12,6 @@ export default function Signin() {
     password: '',
   });
   const [value, updateCookie, deleteCookie] = useCookie('token');
-
   const signin = async() => {
     const { err, res } = await Api.user.signin(body.get());
     errAbortModal(err);
@@ -32,7 +31,7 @@ export default function Signin() {
               'md:max-w-[30rem] ' +
               'sm:max-w-[20rem] ',
             ref=${form},
-            onSubmit=${signin},
+            onSubmit=${(e) => signin(e)},
             onError=${errors => validForm(errors)},
           )
             Grid(container, spacing=${2})
