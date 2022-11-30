@@ -51,6 +51,6 @@ export default function Signin() {
                   validators=${['required']}, type="password",
                   errorMessages=${['密碼欄位必填']},
                 )
-            Button(type="submit", onClick=${signin}) Submit
+            Button(type="submit") Submit
   `
 }
