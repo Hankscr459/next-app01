@@ -13,10 +13,10 @@ export default function Signin() {
   });
   const [value, updateCookie, deleteCookie] = useCookie('token');
   const signin = async() => {
-    const { err, res } = await Api.user.signin(body.get());
+    const { err, res } = await Api.user.signin(body);
     errAbortModal(err);
     updateCookie(get(res, 'data.token'));
-  }
+  };
 
   return pug`
     Grid(

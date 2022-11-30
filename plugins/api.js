@@ -1,8 +1,13 @@
 import { useCookie } from 'react-use';
+import { get } from 'lodash';
 
 const apiUrl = process.env.ApiUrl || '';
 const stringify = (obj) => {
-  return { body: JSON.stringify(obj) };
+  let body = obj;
+  if (get(obj, 'get()')) {
+    body = obj.get();
+  }
+  return { body: JSON.stringify(body) };
 }
 
 const fetchApi = async(url, opts) => {
